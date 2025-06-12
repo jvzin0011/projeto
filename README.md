@@ -1,49 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Meu Portfólio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Relógio Digital - João Vitor Gonçalves</title>
   <style>
     body {
+      background-color: #121212;
+      color: #fff;
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
+      text-align: center;
       margin: 0;
       padding: 0;
     }
+
     header {
-      background-color: #007BFF;
-      color: white;
-      padding: 30px;
-      text-align: center;
-    }
-    section {
-      max-width: 800px;
-      margin: auto;
+      background-color: #1f1f1f;
       padding: 20px;
-      background: white;
     }
-    h2 {
-      color: #007BFF;
+
+    h1 {
+      margin: 0;
+      color: #0f0;
     }
-    ul {
-      list-style: none;
-      padding: 0;
+
+    .clock {
+      font-size: 5rem;
+      color: #0f0;
+      background-color: #000;
+      border: 2px solid #0f0;
+      border-radius: 10px;
+      padding: 20px 50px;
+      display: inline-block;
+      margin-top: 40px;
+      box-shadow: 0 0 20px #0f0;
     }
-    li {
-      margin-bottom: 10px;
-    }
+
     footer {
-      text-align: center;
+      margin-top: 60px;
       padding: 20px;
-      background-color: #f4f4f4;
-      font-size: 0.9em;
-      color: #777;
+      background-color: #1f1f1f;
+      font-size: 0.9rem;
+      color: #aaa;
     }
+
     a {
-      color: #007BFF;
+      color: #0f0;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
@@ -52,28 +57,29 @@
 <body>
 
   <header>
-    <h1>Seu Nome</h1>
-    <p>Desenvolvedor Front-End | Estudante de Tecnologia</p>
+    <h1>Relógio Digital</h1>
+    <p>Feito por João Vitor Gonçalves - Ciência da Computação</p>
   </header>
 
-  <section>
-    <h2>Sobre Mim</h2>
-    <p>Olá! Eu sou um desenvolvedor iniciante apaixonado por criar páginas web simples e funcionais. Atualmente estou aprendendo HTML, CSS e JavaScript.</p>
-
-    <h2>Projetos</h2>
-    <ul>
-      <li><strong>Projeto 1:</strong> <a href="#">To-do list com HTML e JS</a></li>
-      <li><strong>Projeto 2:</strong> <a href="#">Relógio digital</a></li>
-    </ul>
-
-    <h2>Contato</h2>
-    <p>Email: <a href="mailto:seuemail@example.com">seuemail@example.com</a></p>
-    <p>GitHub: <a href="https://github.com/seuusuario" target="_blank">github.com/seuusuario</a></p>
-  </section>
+  <div class="clock" id="clock">00:00:00</div>
 
   <footer>
-    &copy; 2025 - Seu Nome
+    <p>Email: <a href="mailto:joaovitornascimentop3534@gmail.com">joaovitornascimentop3534@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/jvzinn0011" target="_blank">github.com/jvzinn0011</a></p>
   </footer>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const s = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('clock').textContent = `${h}:${m}:${s}`;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
 
 </body>
 </html>
